@@ -19,7 +19,6 @@ import java.util.stream.Stream;
 @ParametersAreNonnullByDefault
 @Mojo(name = "GavReadme", defaultPhase = LifecyclePhase.INSTALL)
 public class GavReadmeMojo extends AbstractMojo {
-    private Boolean encounteredStart = false;
     @Parameter
     private File readmemd;
     @Parameter
@@ -33,6 +32,23 @@ public class GavReadmeMojo extends AbstractMojo {
     public void execute() throws MojoExecutionException, MojoFailureException {
         getLog().info("Updating file: " + readmemd.getAbsolutePath());
         writeReadme(gavReadmeFromContent(contentFromFile(readmemd)));
+    }
+
+    private String contentFromFile(final File file) {
+        String content;
+        try (Stream<String> lines = linesFromFile(file)) {
+            content = lines.collect(Collectors.joining("\n"));
+        }
+
+        return content;
+    }
+
+    private Stream<String> linesFromFile(final File file) {
+        Stream<String> lines = Stream.empty();
+        try { lines = Files.lines(Paths.get(file.getAbsolutePath())); }
+        catch (IOException e) { getLog().error("could not read " + file.getName(), e); }
+
+        return lines;
     }
 
     private void writeReadme(final String readme) {
@@ -64,15 +80,6 @@ public class GavReadmeMojo extends AbstractMojo {
         return content;
     }
 
-    private String contentFromFile(final File file) {
-        String content;
-        try (Stream<String> lines = linesFromFile(file)) {
-            content = lines.collect(Collectors.joining("\n"));
-        }
-
-        return content;
-    }
-
     private String gav() {
         return "[comment]: <{gav-dependency-start}>\n" +
                 "\n" +
@@ -86,13 +93,5 @@ public class GavReadmeMojo extends AbstractMojo {
                 "</dependency>\n" +
                 "```\n" +
                 "[comment]: <{gav-dependency-end}>\n";
-    }
-
-    private Stream<String> linesFromFile(final File file) {
-        Stream<String> lines = Stream.empty();
-        try { lines = Files.lines(Paths.get(file.getAbsolutePath())); }
-        catch (IOException e) { getLog().error("could not read " + file.getName(), e); }
-
-        return lines;
     }
 }
