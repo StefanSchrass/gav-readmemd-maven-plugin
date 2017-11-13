@@ -1,4 +1,4 @@
-This plugin adds the Maven Dependency to the README.md like this:
+This plugin adds the Maven GAV-coordinates of your project to its `README.md` like this:
 
 [comment]: <{gav-dependency-start}>
 
@@ -42,6 +42,5 @@ This plugin adds the Maven Dependency to the README.md like this:
 ```
 
 # Usage
-
 In your `README.md` just add `"[comment]: <{gav-placeholder}>"` wherever you like, 
 the plugin will replace this placeholder with the information provided.

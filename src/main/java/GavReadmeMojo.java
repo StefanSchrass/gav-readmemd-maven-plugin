@@ -64,9 +64,9 @@ public class GavReadmeMojo extends AbstractMojo {
         return content;
     }
 
-    private String contentFromFile(final File readmemd) {
+    private String contentFromFile(final File file) {
         String content;
-        try (Stream<String> lines = linesFromFile(readmemd)) {
+        try (Stream<String> lines = linesFromFile(file)) {
             content = lines.collect(Collectors.joining("\n"));
         }
 
@@ -74,7 +74,7 @@ public class GavReadmeMojo extends AbstractMojo {
     }
 
     private String gav() {
-        return "[comment]: <{gav-dependency-start}>" + "\n" +
+        return "[comment]: <{gav-dependency-start}>\n" +
                 "\n" +
                 "[Maven Dependency](https://github.com/StefanSchrass/gav-readmemd-maven-plugin \"gav-readmemd-maven-plugin\")\n" +
                 "---\n" +
@@ -85,7 +85,7 @@ public class GavReadmeMojo extends AbstractMojo {
                 "    <version>" + version + "</version>\n" +
                 "</dependency>\n" +
                 "```\n" +
-                "[comment]: <{gav-dependency-end}>";
+                "[comment]: <{gav-dependency-end}>\n";
     }
 
     private Stream<String> linesFromFile(final File file) {
