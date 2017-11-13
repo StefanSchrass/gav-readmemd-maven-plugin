@@ -4,7 +4,7 @@
 
     <groupId>de.sschrass.maven</groupId>
     <artifactId>gav-readmemd-maven-plugin</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
     <name>${project.artifactId}</name>
@@ -77,7 +77,7 @@
         <url>https://github.com/StefanSchrass/gav-readmemd-maven-plugin</url>
         <connection>scm:git:https://github.com/StefanSchrass/gav-readmemd-maven-plugin.git</connection>
         <!--<developerConnection>scm:git:ssh://github.com/StefanSchrass/gav-readmemd-maven-plugin.git</developerConnection>-->
-        <tag>gav-readmemd-maven-plugin-1.0.1</tag></scm>
+        <tag>gav-readmemd-maven-plugin-1.0.0</tag></scm>
 
     <distributionManagement>
         <repository>
