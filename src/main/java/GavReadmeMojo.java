@@ -75,7 +75,9 @@ public class GavReadmeMojo extends AbstractMojo {
 
     private String gav() {
         return "[comment]: <{gav-dependency-start}>" + "\n" +
-                "[Gav-ReadmeMd-Maven-Plugin](https://www.google.com \"Google's Homepage\")\n" +
+                "\n" +
+                "[Maven Dependency](https://github.com/StefanSchrass/gav-readmemd-maven-plugin \"gav-readmemd-maven-plugin\")\n" +
+                "---\n" +
                 "```\n" +
                 "<dependency>\n" +
                 "    <groupId>" + groupId + "</groupId>\n" +
