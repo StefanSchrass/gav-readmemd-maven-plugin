@@ -1,8 +1,4 @@
-dfgdfg
-dfg
-
-
-
+This plugin adds the Maven Dependency to the README.md like this:
 
 [comment]: <{gav-dependency-start}>
 
