@@ -14,7 +14,7 @@ This plugin adds the Maven Dependency to the README.md like this:
 [comment]: <{gav-dependency-end}>
 
 
-# Usage
+# Setup
 ```
 <build>
     <plugins>
@@ -40,3 +40,8 @@ This plugin adds the Maven Dependency to the README.md like this:
     </plugins>
 </build>
 ```
+
+# Usage
+
+In your `README.md` just add `"[comment]: <{gav-placeholder}>"` wherever you like, 
+the plugin will replace this placeholder with the information provided.
