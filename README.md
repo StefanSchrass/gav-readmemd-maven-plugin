@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/StefanSchrass/gav-readmemd-maven-plugin.svg?branch=master)](https://travis-ci.org/StefanSchrass/gav-readmemd-maven-plugin)
+
 This plugin adds the Maven GAV-coordinates of your project to its `README.md` like this:
 
 [comment]: <{gav-dependency-start}>
