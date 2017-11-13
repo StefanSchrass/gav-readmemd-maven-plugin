@@ -5,7 +5,7 @@ dfg
 
 
 [comment]: <{gav-dependency-start}>
-[Maven Dependency](https://www.google.com "gav-readmemd-maven-plugin")
+[Maven Dependency](https://github.com/StefanSchrass/gav-readmemd-maven-plugin "gav-readmemd-maven-plugin")
 ---
 ```
 <dependency>   
